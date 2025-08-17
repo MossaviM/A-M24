@@ -3,74 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine Profi-Webseite</title>
+    <title>A&M24 - Professionelle Dienstleistungen</title>
     <style>
         /* Allgemeine Styles */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
             color: #333;
-            scroll-behavior: smooth;
+            line-height: 1.6;
         }
+
+        /* Header / Navigation */
         header {
-            background-color: #007BFF;
-            color: white;
-            padding: 20px 0;
+            background-color: #1a1a1a;
+            color: #f2f2f2;
+            padding: 40px 0;
             text-align: center;
         }
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 18px;
+            color: #cccccc;
+        }
+        nav {
+            margin-top: 20px;
+        }
         nav a {
-            color: white;
+            color: #f2f2f2;
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 16px;
         }
         nav a:hover {
-            text-decoration: underline;
+            color: #ffcc00;
         }
+
+        /* Sektionen */
         section {
             padding: 60px 20px;
             max-width: 1000px;
             margin: auto;
         }
-        h1, h2 {
+        h2 {
             text-align: center;
             margin-bottom: 20px;
+            color: #1a1a1a;
         }
-        .profile-img {
-            display: block;
-            margin: 20px auto;
-            border-radius: 50%;
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-        }
-        .about, .contact {
+        p {
             text-align: center;
+            max-width: 800px;
+            margin: auto;
+            font-size: 18px;
+            color: #555;
         }
-        .contact input, .contact textarea {
-            width: 80%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 8px;
-            border: 1px solid #ccc;
+
+        /* Dienstleistungen / Fähigkeiten */
+        .services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .service {
+            background-color: #f8f8f8;
+            border-radius: 12px;
+            padding: 30px;
+            width: 280px;
+            margin: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .service h3 {
+            color: #007BFF;
+            margin-bottom: 15px;
+        }
+        .service p {
             font-size: 16px;
+            color: #444;
         }
-        .contact button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        .contact button:hover {
-            background-color: #0056b3;
-        }
+
+        /* Footer */
         footer {
-            background-color: #f4f4f4;
+            background-color: #1a1a1a;
+            color: #f2f2f2;
             text-align: center;
             padding: 20px;
             margin-top: 40px;
@@ -81,49 +106,59 @@
 
     <!-- Header -->
     <header>
-        <h1>Willkommen auf meiner Profi-Webseite</h1>
+        <h1>Willkommen bei A&M24</h1>
+        <p>Ihr zuverlässiger Partner für Reinigungsservice, Security und Umzüge</p>
         <nav>
-            <a href="#about">Über mich</a>
-            <a href="#profile">Profil</a>
+            <a href="#about">Über uns</a>
+            <a href="#services">Dienstleistungen</a>
             <a href="#contact">Kontakt</a>
         </nav>
     </header>
 
-    <!-- Über mich -->
-    <section id="about" class="about">
-        <h2>Über mich</h2>
-        <p>Hallo! Ich bin [Dein Name], ein Webentwickler/Designer, der Spaß daran hat, kreative und moderne Webseiten zu erstellen.</p>
-        <img src="https://via.placeholder.com/200" alt="Profilbild" class="profile-img">
+    <!-- Über uns -->
+    <section id="about">
+        <h2>Über uns</h2>
+        <p>
+            A&M24 ist ein professionelles Dienstleistungsunternehmen, das sich auf **Reinigungsservice, Security und Umzüge** spezialisiert hat. 
+            Unser Team besteht aus erfahrenen Fachkräften, die höchste Qualität und Zuverlässigkeit garantieren. 
+            Wir legen großen Wert auf **Pünktlichkeit, Sicherheit und Kundenzufriedenheit**, sodass Ihre Projekte in besten Händen sind.
+        </p>
     </section>
 
-    <!-- Profil / Fähigkeiten -->
-    <section id="profile">
-        <h2>Profil & Fähigkeiten</h2>
-        <p>Hier sind einige meiner wichtigsten Fähigkeiten:</p>
-        <ul>
-            <li>HTML, CSS, JavaScript</li>
-            <li>Responsive Design</li>
-            <li>UI/UX Design</li>
-            <li>Git & GitHub</li>
-            <li>Projekte professionell umsetzen</li>
-        </ul>
+    <!-- Dienstleistungen / Fähigkeiten -->
+    <section id="services">
+        <h2>Unsere Dienstleistungen</h2>
+        <div class="services">
+            <div class="service">
+                <h3>Reinigungsservice</h3>
+                <p>Professionelle Reinigung für private und gewerbliche Objekte – gründlich, zuverlässig und flexibel.</p>
+            </div>
+            <div class="service">
+                <h3>Security</h3>
+                <p>Rund-um-Schutz für Veranstaltungen, Gebäude und Personen – unser geschultes Personal sorgt für Sicherheit.</p>
+            </div>
+            <div class="service">
+                <h3>Umzüge</h3>
+                <p>Stressfreie Umzüge mit professioneller Planung, sicherem Transport und termingerechter Durchführung.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Kontakt -->
-    <section id="contact" class="contact">
+    <section id="contact">
         <h2>Kontakt</h2>
-        <p>Schreibe mir eine Nachricht!</p>
-        <form onsubmit="alert('Vielen Dank! Nachricht gesendet.'); return false;">
-            <input type="text" name="name" placeholder="Dein Name" required><br>
-            <input type="email" name="email" placeholder="Deine Email" required><br>
-            <textarea name="message" rows="5" placeholder="Deine Nachricht" required></textarea><br>
-            <button type="submit">Absenden</button>
+        <p>Schreiben Sie uns eine Nachricht oder rufen Sie uns an – wir freuen uns auf Ihre Anfrage!</p>
+        <form onsubmit="alert('Vielen Dank! Ihre Nachricht wurde gesendet.'); return false;" style="text-align:center; margin-top:30px;">
+            <input type="text" name="name" placeholder="Ihr Name" required style="width:80%; padding:10px; margin:10px 0; border-radius:8px; border:1px solid #ccc;"><br>
+            <input type="email" name="email" placeholder="Ihre Email" required style="width:80%; padding:10px; margin:10px 0; border-radius:8px; border:1px solid #ccc;"><br>
+            <textarea name="message" rows="5" placeholder="Ihre Nachricht" required style="width:80%; padding:10px; margin:10px 0; border-radius:8px; border:1px solid #ccc;"></textarea><br>
+            <button type="submit" style="background-color:#007BFF; color:white; padding:15px 30px; border:none; border-radius:8px; cursor:pointer;">Absenden</button>
         </form>
     </section>
 
     <!-- Footer -->
     <footer>
-        &copy; 2025 Meine Profi-Webseite | Erstellt mit ❤️
+        &copy; 2025 A&M24 | Official Website | A&M24
     </footer>
 
 </body>
