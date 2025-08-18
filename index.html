@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A&M24 - Dienstleistungen</title>
+  <title>A&M24 - Ihr Partner in Deutschland</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
@@ -13,10 +13,10 @@
       color: #f5f5f5;
     }
 
-    /* Hero mit Animation */
+    /* Hero */
     header {
       background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                  url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80');
+                  url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80');
       background-size: cover;
       background-position: center;
       text-align: center;
@@ -29,16 +29,30 @@
       to {opacity: 1;}
     }
     header h1 {
-      font-size: 52px;
+      font-size: 54px;
       margin: 0;
       color: #ff3333;
       text-transform: uppercase;
       letter-spacing: 2px;
     }
     header p {
-      font-size: 24px;
+      font-size: 22px;
       margin-top: 15px;
       color: #ddd;
+    }
+    .cta-btn {
+      margin-top: 30px;
+      background: #ff3333;
+      border: none;
+      padding: 15px 35px;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .cta-btn:hover {
+      background: #cc0000;
     }
 
     nav {
@@ -55,7 +69,6 @@
       color: #ff3333;
     }
 
-    /* Sektionen */
     section {
       padding: 70px 20px;
       max-width: 1100px;
@@ -92,17 +105,34 @@
       color: #ff3333;
       margin-bottom: 15px;
     }
-    .service h3 {
-      margin-bottom: 10px;
-      font-size: 22px;
-      color: #fff;
+
+    /* Vorteile */
+    .benefits {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 30px;
     }
-    .service p {
-      color: #bbb;
+    .benefit {
+      background: #1a1a1a;
+      padding: 25px;
+      border-radius: 10px;
+      width: 260px;
+      text-align: center;
       font-size: 16px;
+      transition: transform 0.3s;
+    }
+    .benefit:hover {
+      transform: scale(1.05);
+    }
+    .benefit i {
+      font-size: 32px;
+      color: #ff3333;
+      margin-bottom: 10px;
     }
 
-    /* Kundenstimmen */
+    /* Testimonials */
     .testimonials {
       display: flex;
       flex-wrap: wrap;
@@ -134,15 +164,29 @@
       font-style: normal;
     }
 
+    /* FAQ */
+    .faq {
+      max-width: 800px;
+      margin: auto;
+    }
+    .faq-item {
+      margin-bottom: 20px;
+    }
+    .faq-item h4 {
+      color: #ff3333;
+      margin-bottom: 5px;
+    }
+    .faq-item p {
+      color: #bbb;
+      margin: 0;
+    }
+
     /* Kontakt */
     .contact-box {
       text-align: center;
       background: #1a1a1a;
       padding: 50px;
       border-radius: 12px;
-    }
-    .contact-box p {
-      margin-bottom: 25px;
     }
     .contact-info {
       display: flex;
@@ -159,19 +203,6 @@
       font-size: 24px;
       margin-bottom: 5px;
     }
-    .contact-box button {
-      background: #ff3333;
-      border: none;
-      padding: 15px 40px;
-      border-radius: 8px;
-      color: #fff;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .contact-box button:hover {
-      background: #cc0000;
-    }
 
     /* Footer */
     footer {
@@ -183,18 +214,6 @@
     footer span {
       color: #ff3333;
     }
-    .socials {
-      margin-top: 15px;
-    }
-    .socials a {
-      color: #fff;
-      margin: 0 10px;
-      font-size: 18px;
-      transition: color 0.3s;
-    }
-    .socials a:hover {
-      color: #ff3333;
-    }
   </style>
 </head>
 <body>
@@ -202,10 +221,13 @@
   <!-- Hero -->
   <header>
     <h1>A&M24</h1>
-    <p>Reinigung • Security • Umzüge</p>
+    <p>Reinigung • Security • Umzüge – Deutschlandweit im Einsatz</p>
+    <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView()">Jetzt Kontakt aufnehmen</button>
     <nav>
       <a href="#services">Dienstleistungen</a>
+      <a href="#benefits">Vorteile</a>
       <a href="#testimonials">Referenzen</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Kontakt</a>
     </nav>
   </header>
@@ -216,19 +238,30 @@
     <div class="services">
       <div class="service">
         <i class="fas fa-broom"></i>
-        <h3>Reinigungsservice</h3>
-        <p>Gründliche Reinigung für Büros, Gebäude & Events – zuverlässig & diskret.</p>
+        <h3>Reinigung</h3>
+        <p>Professionelle Gebäudereinigung, Büroservice und Eventreinigung.</p>
       </div>
       <div class="service">
         <i class="fas fa-shield-alt"></i>
         <h3>Security</h3>
-        <p>Professioneller Schutz für Objekte & Veranstaltungen – 24/7 Sicherheit.</p>
+        <p>Sicherheitsdienste für Objekte, Events & 24/7 Schutz deutschlandweit.</p>
       </div>
       <div class="service">
         <i class="fas fa-truck-moving"></i>
         <h3>Umzüge</h3>
-        <p>Stressfreie Umzüge mit Transport, Montage & Organisation aus einer Hand.</p>
+        <p>Stressfreie Umzüge mit Transport, Montage und Organisation.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- Vorteile -->
+  <section id="benefits">
+    <h2>Warum A&M24?</h2>
+    <div class="benefits">
+      <div class="benefit"><i class="fas fa-clock"></i><br>Zuverlässig & pünktlich</div>
+      <div class="benefit"><i class="fas fa-users"></i><br>Geschultes Fachpersonal</div>
+      <div class="benefit"><i class="fas fa-headset"></i><br>24/7 erreichbar</div>
+      <div class="benefit"><i class="fas fa-globe"></i><br>Deutschlandweit im Einsatz</div>
     </div>
   </section>
 
@@ -237,16 +270,35 @@
     <h2>Was unsere Kunden sagen</h2>
     <div class="testimonials">
       <div class="testimonial">
-        „Sehr zuverlässig und professionell – unser Büro war blitzsauber!“
+        „Top Service, sehr zuverlässig – unser Büro glänzt wie neu!“
         <strong>– Müller GmbH</strong>
       </div>
       <div class="testimonial">
-        „Sicherheitsdienst bei unserem Event: top organisiert und vertrauenswürdig.“
-        <strong>– Eventagentur Berlin</strong>
+        „Sicherheitsdienst war perfekt organisiert. Absolut empfehlenswert.“
+        <strong>– Eventagentur NRW</strong>
       </div>
       <div class="testimonial">
-        „Unser Umzug verlief reibungslos, schnell und stressfrei. Danke!“
-        <strong>– Familie Schneider</strong>
+        „Unser Umzug verlief reibungslos und schnell. Danke an das Team!“
+        <strong>– Familie Schmidt</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>Häufige Fragen</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <h4>Bieten Sie Ihre Services deutschlandweit an?</h4>
+        <p>Ja, wir sind in ganz Deutschland für Sie im Einsatz.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Kann ich kurzfristig buchen?</h4>
+        <p>Nach Absprache – unser Team ist flexibel und 24/7 erreichbar.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Welche Branchen betreuen Sie?</h4>
+        <p>Von Privatkunden bis Firmen – Büros, Events, Objekte und mehr.</p>
       </div>
     </div>
   </section>
@@ -258,21 +310,16 @@
       <div class="contact-info">
         <div><i class="fas fa-phone"></i><br>+49 123 456 789</div>
         <div><i class="fas fa-envelope"></i><br>info@am24.de</div>
-        <div><i class="fas fa-map-marker-alt"></i><br>Berlin, Deutschland</div>
+        <div><i class="fas fa-map-marker-alt"></i><br>Deutschland</div>
       </div>
       <p>Jetzt unverbindlich anfragen und ein individuelles Angebot erhalten:</p>
-      <button onclick="alert('Danke für Ihre Anfrage!')">Angebot anfordern</button>
+      <button class="cta-btn" onclick="alert('Danke für Ihre Anfrage!')">Angebot anfordern</button>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    &copy; 2025 <span>A&M24</span> – Professionelle Dienstleistungen
-    <div class="socials">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-    </div>
+    &copy; 2025 <span>A&M24</span> – Dienstleistungen Deutschlandweit
   </footer>
 
 </body>
