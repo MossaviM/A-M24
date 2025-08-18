@@ -3,42 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A&M24 - Professionelle Dienstleistungen</title>
+  <title>A&M24 - Dienstleistungen</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    /* Allgemein */
     body {
       margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background-color: #111;
       color: #f5f5f5;
-      line-height: 1.6;
     }
 
-    /* Header */
+    /* Hero mit Hintergrundbild */
     header {
-      background: linear-gradient(to right, #8B0000, #000);
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                  url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
       text-align: center;
-      padding: 60px 20px;
+      padding: 120px 20px;
       color: #fff;
     }
     header h1 {
-      font-size: 42px;
-      margin: 0 0 10px;
-      letter-spacing: 2px;
+      font-size: 48px;
+      margin: 0;
+      color: #ff3333;
     }
     header p {
-      font-size: 20px;
+      font-size: 22px;
+      margin-top: 10px;
       color: #ddd;
     }
+
     nav {
-      margin-top: 20px;
+      margin-top: 30px;
     }
     nav a {
       color: #fff;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 16px;
       transition: color 0.3s;
     }
     nav a:hover {
@@ -53,90 +56,75 @@
     }
     h2 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 50px;
       font-size: 32px;
       color: #ff3333;
     }
-    p {
-      text-align: center;
-      max-width: 850px;
-      margin: auto;
-      font-size: 18px;
-      color: #ccc;
-    }
 
-    /* Dienstleistungen */
+    /* Dienstleistungen mit Icons */
     .services {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       flex-wrap: wrap;
-      margin-top: 50px;
+      gap: 30px;
     }
     .service {
       background: #1a1a1a;
-      border: 1px solid #333;
       border-radius: 12px;
-      padding: 30px;
-      width: 300px;
-      margin: 15px;
+      padding: 40px 20px;
+      width: 280px;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .service:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(255,0,0,0.4);
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(255,0,0,0.3);
     }
-    .service h3 {
+    .service i {
+      font-size: 40px;
       color: #ff3333;
       margin-bottom: 15px;
+    }
+    .service h3 {
+      margin-bottom: 10px;
       font-size: 22px;
+      color: #fff;
     }
     .service p {
+      color: #bbb;
       font-size: 16px;
-      color: #ddd;
     }
 
-    /* Kontaktformular */
-    form {
+    /* Kontakt */
+    .contact-box {
       text-align: center;
-      margin-top: 30px;
+      background: #1a1a1a;
+      padding: 50px;
+      border-radius: 12px;
     }
-    form input, form textarea {
-      width: 80%;
-      max-width: 500px;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 8px;
+    .contact-box p {
+      margin-bottom: 20px;
+    }
+    .contact-box button {
+      background: #ff3333;
       border: none;
-      outline: none;
-      font-size: 16px;
-    }
-    form textarea {
-      resize: none;
-    }
-    form button {
-      background-color: #ff3333;
+      padding: 15px 40px;
+      border-radius: 8px;
       color: #fff;
-      padding: 14px 32px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
       font-size: 16px;
+      cursor: pointer;
       transition: background 0.3s;
     }
-    form button:hover {
-      background-color: #cc0000;
+    .contact-box button:hover {
+      background: #cc0000;
     }
 
     /* Footer */
     footer {
-      background-color: #000;
-      color: #777;
+      background: #000;
       text-align: center;
       padding: 20px;
-      margin-top: 40px;
-      font-size: 14px;
+      color: #777;
     }
     footer span {
       color: #ff3333;
@@ -145,43 +133,34 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Hero -->
   <header>
-    <h1>Willkommen bei A&M24</h1>
-    <p>Ihr starker Partner für Reinigung • Security • Umzüge</p>
+    <h1>A&M24</h1>
+    <p>Reinigung • Security • Umzüge</p>
     <nav>
-      <a href="#about">Über uns</a>
       <a href="#services">Dienstleistungen</a>
       <a href="#contact">Kontakt</a>
     </nav>
   </header>
-
-  <!-- Über uns -->
-  <section id="about">
-    <h2>Über uns</h2>
-    <p>
-      A&M24 steht für **Qualität, Zuverlässigkeit und Sicherheit**.  
-      Unser Team bietet professionelle Dienstleistungen in den Bereichen <strong>Reinigung, Security und Umzug</strong>.  
-      Mit unserer Erfahrung und unserem Engagement sorgen wir für Sauberkeit, Schutz und reibungslose Abläufe.  
-      Wir arbeiten präzise, pünktlich und stets im Sinne unserer Kunden.
-    </p>
-  </section>
 
   <!-- Dienstleistungen -->
   <section id="services">
     <h2>Unsere Dienstleistungen</h2>
     <div class="services">
       <div class="service">
+        <i class="fas fa-broom"></i>
         <h3>Reinigungsservice</h3>
-        <p>Gründliche Reinigung von Büros, Häusern und Objekten – zuverlässig, effizient und diskret.</p>
+        <p>Sauberkeit für Büros, Gebäude & Events – schnell, gründlich, zuverlässig.</p>
       </div>
       <div class="service">
+        <i class="fas fa-shield-alt"></i>
         <h3>Security</h3>
-        <p>Sicherheitsdienste für Events, Objekte und Personen – professionell, geschult und wachsam.</p>
+        <p>Objekt- & Eventschutz mit geschultem Sicherheitspersonal – 24/7 verfügbar.</p>
       </div>
       <div class="service">
+        <i class="fas fa-truck-moving"></i>
         <h3>Umzüge</h3>
-        <p>Stressfreie Umzüge mit sorgfältiger Planung, sicherem Transport und schneller Durchführung.</p>
+        <p>Stressfreie Umzüge inkl. Transport, Montage & Organisation.</p>
       </div>
     </div>
   </section>
@@ -189,18 +168,15 @@
   <!-- Kontakt -->
   <section id="contact">
     <h2>Kontakt</h2>
-    <p>Wir freuen uns auf Ihre Anfrage – schreiben Sie uns direkt:</p>
-    <form onsubmit="alert('Vielen Dank! Ihre Nachricht wurde gesendet.'); return false;">
-      <input type="text" name="name" placeholder="Ihr Name" required><br>
-      <input type="email" name="email" placeholder="Ihre Email" required><br>
-      <textarea name="message" rows="5" placeholder="Ihre Nachricht" required></textarea><br>
-      <button type="submit">Absenden</button>
-    </form>
+    <div class="contact-box">
+      <p>Jetzt unverbindlich anfragen und ein individuelles Angebot erhalten:</p>
+      <button onclick="alert('Danke für Ihre Anfrage!')">Kontakt aufnehmen</button>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    &copy; 2025 <span>A&M24</span> | Alle Rechte vorbehalten
+    &copy; 2025 <span>A&M24</span> – Professionelle Dienstleistungen
   </footer>
 
 </body>
