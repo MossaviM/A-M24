@@ -13,7 +13,7 @@
       color: #f5f5f5;
     }
 
-    /* Hero mit Hintergrundbild */
+    /* Hero mit Animation */
     header {
       background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                   url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80');
@@ -22,20 +22,27 @@
       text-align: center;
       padding: 120px 20px;
       color: #fff;
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
     header h1 {
-      font-size: 48px;
+      font-size: 52px;
       margin: 0;
       color: #ff3333;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
     header p {
-      font-size: 22px;
-      margin-top: 10px;
+      font-size: 24px;
+      margin-top: 15px;
       color: #ddd;
     }
 
     nav {
-      margin-top: 30px;
+      margin-top: 40px;
     }
     nav a {
       color: #fff;
@@ -57,11 +64,11 @@
     h2 {
       text-align: center;
       margin-bottom: 50px;
-      font-size: 32px;
+      font-size: 34px;
       color: #ff3333;
     }
 
-    /* Dienstleistungen mit Icons */
+    /* Dienstleistungen */
     .services {
       display: flex;
       justify-content: center;
@@ -81,7 +88,7 @@
       box-shadow: 0 8px 20px rgba(255,0,0,0.3);
     }
     .service i {
-      font-size: 40px;
+      font-size: 42px;
       color: #ff3333;
       margin-bottom: 15px;
     }
@@ -95,6 +102,38 @@
       font-size: 16px;
     }
 
+    /* Kundenstimmen */
+    .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+    .testimonial {
+      background: #1a1a1a;
+      padding: 25px;
+      border-radius: 12px;
+      width: 300px;
+      font-size: 15px;
+      color: #ccc;
+      font-style: italic;
+      position: relative;
+    }
+    .testimonial::before {
+      content: "“";
+      font-size: 40px;
+      color: #ff3333;
+      position: absolute;
+      top: -10px;
+      left: 10px;
+    }
+    .testimonial strong {
+      display: block;
+      margin-top: 15px;
+      color: #fff;
+      font-style: normal;
+    }
+
     /* Kontakt */
     .contact-box {
       text-align: center;
@@ -103,7 +142,22 @@
       border-radius: 12px;
     }
     .contact-box p {
+      margin-bottom: 25px;
+    }
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
       margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .contact-info div {
+      text-align: center;
+    }
+    .contact-info i {
+      color: #ff3333;
+      font-size: 24px;
+      margin-bottom: 5px;
     }
     .contact-box button {
       background: #ff3333;
@@ -129,6 +183,18 @@
     footer span {
       color: #ff3333;
     }
+    .socials {
+      margin-top: 15px;
+    }
+    .socials a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+    .socials a:hover {
+      color: #ff3333;
+    }
   </style>
 </head>
 <body>
@@ -139,6 +205,7 @@
     <p>Reinigung • Security • Umzüge</p>
     <nav>
       <a href="#services">Dienstleistungen</a>
+      <a href="#testimonials">Referenzen</a>
       <a href="#contact">Kontakt</a>
     </nav>
   </header>
@@ -150,17 +217,36 @@
       <div class="service">
         <i class="fas fa-broom"></i>
         <h3>Reinigungsservice</h3>
-        <p>Sauberkeit für Büros, Gebäude & Events – schnell, gründlich, zuverlässig.</p>
+        <p>Gründliche Reinigung für Büros, Gebäude & Events – zuverlässig & diskret.</p>
       </div>
       <div class="service">
         <i class="fas fa-shield-alt"></i>
         <h3>Security</h3>
-        <p>Objekt- & Eventschutz mit geschultem Sicherheitspersonal – 24/7 verfügbar.</p>
+        <p>Professioneller Schutz für Objekte & Veranstaltungen – 24/7 Sicherheit.</p>
       </div>
       <div class="service">
         <i class="fas fa-truck-moving"></i>
         <h3>Umzüge</h3>
-        <p>Stressfreie Umzüge inkl. Transport, Montage & Organisation.</p>
+        <p>Stressfreie Umzüge mit Transport, Montage & Organisation aus einer Hand.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kundenstimmen -->
+  <section id="testimonials">
+    <h2>Was unsere Kunden sagen</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        „Sehr zuverlässig und professionell – unser Büro war blitzsauber!“
+        <strong>– Müller GmbH</strong>
+      </div>
+      <div class="testimonial">
+        „Sicherheitsdienst bei unserem Event: top organisiert und vertrauenswürdig.“
+        <strong>– Eventagentur Berlin</strong>
+      </div>
+      <div class="testimonial">
+        „Unser Umzug verlief reibungslos, schnell und stressfrei. Danke!“
+        <strong>– Familie Schneider</strong>
       </div>
     </div>
   </section>
@@ -169,14 +255,24 @@
   <section id="contact">
     <h2>Kontakt</h2>
     <div class="contact-box">
+      <div class="contact-info">
+        <div><i class="fas fa-phone"></i><br>+49 123 456 789</div>
+        <div><i class="fas fa-envelope"></i><br>info@am24.de</div>
+        <div><i class="fas fa-map-marker-alt"></i><br>Berlin, Deutschland</div>
+      </div>
       <p>Jetzt unverbindlich anfragen und ein individuelles Angebot erhalten:</p>
-      <button onclick="alert('Danke für Ihre Anfrage!')">Kontakt aufnehmen</button>
+      <button onclick="alert('Danke für Ihre Anfrage!')">Angebot anfordern</button>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
     &copy; 2025 <span>A&M24</span> – Professionelle Dienstleistungen
+    <div class="socials">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
   </footer>
 
 </body>
